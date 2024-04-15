@@ -1,26 +1,36 @@
-function PizzaBlock() {
+import React from "react";
+
+function PizzaBlock(props) {
+  const [pizzaCount, setPizzaCount] = React.useState(0);
+  // Event handler function to increment the pizzaCount
+  const increment = () => {
+    setPizzaCount(pizzaCount + 1);
+    console.log(pizzaCount);
+  };
+  console.log(pizzaCount);
+
   return (
-    <div class="pizza-block">
+    <div className="pizza-block">
       <img
-        class="pizza-block__image"
+        className="pizza-block__image"
         src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
         alt="Pizza"
       />
-      <h4 class="pizza-block__title">Чизбургер-пицца</h4>
-      <div class="pizza-block__selector">
+      <h4 className="pizza-block__title">{props.title}</h4>
+      <div className="pizza-block__selector">
         <ul>
-          <li class="active">тонкое</li>
+          <li className="active">тонкое</li>
           <li>традиционное</li>
         </ul>
         <ul>
-          <li class="active">26 см.</li>
+          <li className="active">26 см.</li>
           <li>30 см.</li>
           <li>40 см.</li>
         </ul>
       </div>
-      <div class="pizza-block__bottom">
-        <div class="pizza-block__price">от 395 ₽</div>
-        <div class="button button--outline button--add">
+      <div className="pizza-block__bottom">
+        <div className="pizza-block__price">от {props.price} ₽</div>
+        <div onClick={increment} className="button button--outline button--add">
           <svg
             width="12"
             height="12"
@@ -34,7 +44,7 @@ function PizzaBlock() {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
+          <i>{pizzaCount}</i>
         </div>
       </div>
     </div>
