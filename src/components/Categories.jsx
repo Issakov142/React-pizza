@@ -5,28 +5,18 @@ function Categories() {
   function catHandler(defIndex) {
     setCatIndex(defIndex);
   }
+  const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 
   return (
     <div className="categories">
       <ul>
-        <li onClick={() => catHandler(1)} className={catIndex === 1 ? 'active' : ''}>
-          Все
-        </li>
-        <li onClick={() => catHandler(2)} className={catIndex === 2 ? 'active' : ''}>
-          Мясные
-        </li>
-        <li onClick={() => catHandler(3)} className={catIndex === 3 ? 'active' : ''}>
-          Вегетарианская
-        </li>
-        <li onClick={() => catHandler(4)} className={catIndex === 4 ? 'active' : ''}>
-          Гриль
-        </li>
-        <li onClick={() => catHandler(5)} className={catIndex === 5 ? 'active' : ''}>
-          Острые
-        </li>
-        <li onClick={() => catHandler(6)} className={catIndex === 6 ? 'active' : ''}>
-          Закрытые
-        </li>
+        {categories.map((value, i) => {
+          return (
+            <li onClick={() => catHandler(i)} className={catIndex === i ? 'active' : ''}>
+              {value}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

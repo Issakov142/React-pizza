@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import "./scss/app.scss";
+import './scss/app.scss';
+import pizzas from './assets/pizzas.json';
 
-import Header from "./components/Header";
-import Categories from "./components/Categories";
-import Sort from "./components/Sort";
-import PizzaBlock from "./components/PizzaCard";
+import Header from './components/Header';
+import Categories from './components/Categories';
+import Sort from './components/Sort';
+import PizzaBlock from './components/PizzaCard';
 
 function App() {
   return (
@@ -19,10 +20,9 @@ function App() {
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-            <PizzaBlock title="Mexican" price="222" />
-            <PizzaBlock title="Chicken" price={45345} />
-            <PizzaBlock />
-            <PizzaBlock />
+            {pizzas.map((obj) => {
+              return <PizzaBlock image={obj.imageUrl} title={obj.title} price={obj.price} />;
+            })}
           </div>
         </div>
       </div>
