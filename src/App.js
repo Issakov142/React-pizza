@@ -21,7 +21,7 @@ function App() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {pizzas.map((obj) => {
-              return <PizzaBlock image={obj.imageUrl} title={obj.title} price={obj.price} />;
+              return <PizzaBlock {...obj} />;
             })}
           </div>
         </div>
