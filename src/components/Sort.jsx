@@ -8,6 +8,7 @@ function Sort() {
     setCompId(index);
     setOpen(false);
   };
+
   const sortComponents = ['популярности', 'цене', 'алфавиту'];
 
   return (
