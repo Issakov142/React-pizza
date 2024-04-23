@@ -16,7 +16,7 @@ const Home = () => {
         setIsLoading(false);
       });
   }, []);
-  console.log(pizzas);
+
   return (
     <>
       <div className="content__top">
