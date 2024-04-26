@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Categories() {
-  const [catIndex, setCatIndex] = React.useState(0);
+function Categories({ setCatIndex, value }) {
   function catHandler(defIndex) {
     setCatIndex(defIndex);
   }
@@ -10,10 +9,10 @@ function Categories() {
   return (
     <div className="categories">
       <ul>
-        {categories.map((value, i) => {
+        {categories.map((category, i) => {
           return (
-            <li key={i} onClick={() => catHandler(i)} className={catIndex === i ? 'active' : ''}>
-              {value}
+            <li key={i} onClick={() => catHandler(i)} className={value === i ? 'active' : ''}>
+              {category}
             </li>
           );
         })}
